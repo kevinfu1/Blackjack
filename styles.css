@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+}
+
+#blackjack {
+  background-image: url("./wood.jpg");
+  background-size: 100% 100%;
+  overflow: hidden;
+}
+#start-page {
+  background: url("./background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: scroll;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  height: 100vh;
+  justify-content: center;
+}
+.background {
+  height: 90%;
+  width: 100%;
+  background-image: radial-gradient(darkgreen, #002000);
+  /* border-bottom: 50px solid brown;
+  border-image: url("./wood.jpg") 30 round; */
+  border-radius: 0 0 40% 40%;
+  position: absolute;
+  z-index: -1;
+
+}
+.card {
+  /* margin: 100px auto 0; */
+  width: 100px;
+  height: 150px;
+  perspective: 1000px;
+  position: absolute;
+  transition: top 1s linear, left 1s linear;
+
+}
+.card__inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+.card__inner.is-flipped {
+  transform: rotateY(180deg);
+}
+.card__face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.2);
+}
+
+.card__face--front {
+  border: 3px solid black;
+  border-radius: 16px;
+  transform: rotateY(180deg);
+}
+
+.playercard {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+.actions {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 40vh;
+  height: 5vh;
+  top: 90vh
+}
+.actions button {
+  padding: 0.5rem 2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.card__background {
+  position: absolute;
+  border: 3px solid red;
+}
+.sums {
+  position: absolute;
+  top: 300px;
+  border: 3px solid red;
+}
+
+#start {
+  position: relative;
+  margin-left: 45%;
+  margin-top: 35%;
+  border-radius: 20px;
+  background-color: goldenrod;
+}
+
+.display {
+  position: absolute;
+  top: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90vh;
+  height: 40vh;
+  visibility: hidden; 
+}
+.display h1 {
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+  text-shadow: 1px 1px 20px black;
+  font-size: 50px;
+  color: goldenrod;
+}
+#restart {
+  position: absolute;
+  bottom: 20%;
+  cursor: pointer;
+}
+
